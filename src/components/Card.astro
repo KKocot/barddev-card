@@ -101,24 +101,20 @@ const techStack: { name: string; imageSrc: string }[] = [
     <ul class="list bg-base-100 rounded-box shadow-md">
       {
         cards.map((e) => (
-          <li class="list-row flex items-center ">
-            <div class="rounded-box bg-base-300">
-              <img class="size-10 p-1" src={e.imageSrc} />
-            </div>
-            <div>
-              <div>{e.title}</div>
-              <div class="text-xs uppercase font-semibold opacity-60">
-                {e.description}
+          <a href={e.linkHref} target="_blank">
+            <li class="list-row flex items-center hover:bg-base-200">
+              <div class="rounded-box bg-base-300">
+                <img class="size-10 p-1" src={e.imageSrc} />
               </div>
-            </div>
-            <a
-              href={e.linkHref}
-              class="btn btn-ghost btn-sm ml-auto"
-              target="_blank"
-            >
-              <Icon name="external" class="size-10" />
-            </a>
-          </li>
+              <div>
+                <div>{e.title}</div>
+                <div class="text-xs font-semibold opacity-60">
+                  {e.description}
+                </div>
+              </div>
+              <Icon name="external" class="size-10 ml-auto" />
+            </li>
+          </a>
         ))
       }
     </ul>
