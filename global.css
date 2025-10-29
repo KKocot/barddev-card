@@ -3,9 +3,9 @@
 
 @plugin "daisyui/theme" {
   name: "cupcake";
-  default: false;
+  default: true;
   prefersdark: true;
-  color-scheme: "dark";
+  color-scheme: "light";
   --color-base-100: oklch(26% 0.051 172.552);
   --color-base-200: oklch(37% 0.077 168.94);
   --color-base-300: oklch(43% 0.095 166.913);
