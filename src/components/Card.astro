@@ -42,6 +42,9 @@ const techStack: { name: string; imageSrc: string }[] = [
   { name: "HTML5", imageSrc: "/teck-icons/HTML5.svg" },
   { name: "MongoDB", imageSrc: "/teck-icons/MongoDB.svg" },
   { name: "Figma", imageSrc: "/teck-icons/Figma.svg" },
+];
+
+const additionalTechStack: { name: string; imageSrc: string }[] = [
   { name: "Mongoose.js", imageSrc: "/teck-icons/Mongoose.js.svg" },
   { name: "ESLint", imageSrc: "/teck-icons/ESLint.svg" },
   { name: "Playwright", imageSrc: "/teck-icons/Playwrite.svg" },
@@ -55,12 +58,17 @@ const techStack: { name: string; imageSrc: string }[] = [
   { name: "Solid.js", imageSrc: "/teck-icons/Solid.js.svg" },
   { name: "GitLab", imageSrc: "/teck-icons/GitLab.svg" },
   { name: "Node.js", imageSrc: "/teck-icons/Node.js.svg" },
+  { name: "Tanstack", imageSrc: "/teck-icons/tanstack.png" },
 ];
 ---
 
 <style>
   .tech-carousel {
     animation: scroll-left 30s linear infinite;
+  }
+
+  .tech-carousel-right {
+    animation: scroll-right 30s linear infinite;
   }
 
   @keyframes scroll-left {
@@ -72,7 +80,17 @@ const techStack: { name: string; imageSrc: string }[] = [
     }
   }
 
-  .tech-carousel:hover {
+  @keyframes scroll-right {
+    0% {
+      transform: translateX(-50%);
+    }
+    100% {
+      transform: translateX(0);
+    }
+  }
+
+  .tech-carousel:hover,
+  .tech-carousel-right:hover {
     animation-play-state: paused;
   }
 </style>
@@ -124,6 +142,18 @@ const techStack: { name: string; imageSrc: string }[] = [
         <div class="tech-carousel flex space-x-4 w-max">
           {
             [...techStack, ...techStack].map((tech) => (
+              <div class="carousel-item p-1 rounded-2xl shrink-0 flex flex-col items-center">
+                <img src={tech.imageSrc} class="w-12" alt={tech.name} />
+                <div class="text-xs font-semibold">{tech.name}</div>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+      <div class="overflow-hidden rounded-box max-w-md p-4">
+        <div class="tech-carousel-right flex space-x-4 w-max">
+          {
+            [...additionalTechStack, ...additionalTechStack].map((tech) => (
               <div class="carousel-item p-1 rounded-2xl shrink-0 flex flex-col items-center">
                 <img src={tech.imageSrc} class="w-12" alt={tech.name} />
                 <div class="text-xs font-semibold">{tech.name}</div>
