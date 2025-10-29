@@ -1,0 +1,139 @@
+---
+import { Icon } from "@astrojs/starlight/components";
+
+interface Card {
+  title: string;
+  description: string;
+  imageSrc: string;
+  linkHref: string;
+}
+const cards: Card[] = [
+  {
+    title: "Portfolio",
+    description: "Commercial contact",
+    imageSrc: "/bardavatar.png",
+    linkHref: "https://portfolio.bard-dev.com",
+  },
+  {
+    title: "Blog Page",
+    description: "My personal blog",
+    imageSrc: "/bardavatar.png",
+    linkHref: "https://blog.dev.openhive.network/@barddev.com",
+  },
+  {
+    title: "Conqsite",
+    description: "My main project",
+    imageSrc: "/bardavatar.png",
+    linkHref: "https://blog.dev.openhive.network/@barddev.com",
+  },
+];
+const techStack: { name: string; imageSrc: string }[] = [
+  { name: "Astro", imageSrc: "/teck-icons/Astro.svg" },
+  { name: "TypeScript", imageSrc: "/teck-icons/TypeScript.svg" },
+  { name: "JavaScript", imageSrc: "/teck-icons/JavaScript.svg" },
+  { name: "React", imageSrc: "/teck-icons/React.svg" },
+  { name: "Next.js", imageSrc: "/teck-icons/Next.js.svg" },
+  { name: "Tailwind CSS", imageSrc: "/teck-icons/Tailwind CSS.svg" },
+  { name: "Vite.js", imageSrc: "/teck-icons/Vite.js.svg" },
+  { name: "GitHub", imageSrc: "/teck-icons/GitHub.svg" },
+  { name: "Docker", imageSrc: "/teck-icons/Docker.svg" },
+  { name: "Cloudflare", imageSrc: "/teck-icons/Cloudflare.svg" },
+  { name: "CSS3", imageSrc: "/teck-icons/CSS3.svg" },
+  { name: "HTML5", imageSrc: "/teck-icons/HTML5.svg" },
+  { name: "MongoDB", imageSrc: "/teck-icons/MongoDB.svg" },
+  { name: "Figma", imageSrc: "/teck-icons/Figma.svg" },
+  { name: "Mongoose.js", imageSrc: "/teck-icons/Mongoose.js.svg" },
+  { name: "ESLint", imageSrc: "/teck-icons/ESLint.svg" },
+  { name: "Playwrite", imageSrc: "/teck-icons/Playwrite.svg" },
+  { name: "xlsx", imageSrc: "/teck-icons/xlsx-svgrepo-com.svg" },
+  { name: "API", imageSrc: "/teck-icons/api-svgrepo-com.svg" },
+  { name: "DNS", imageSrc: "/teck-icons/dns-svgrepo-com.svg" },
+  { name: "blockchain", imageSrc: "/teck-icons/blockchain-svgrepo-com.svg" },
+  { name: "Vercel", imageSrc: "/teck-icons/Vercel.svg" },
+  { name: "Git", imageSrc: "/teck-icons/Git.svg" },
+  { name: "Express", imageSrc: "/teck-icons/Express.svg" },
+  { name: "Solid.js", imageSrc: "/teck-icons/Solid.js.svg" },
+];
+---
+
+<style>
+  .tech-carousel {
+    animation: scroll-left 80s linear infinite;
+  }
+
+  @keyframes scroll-left {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
+  }
+
+  .tech-carousel:hover {
+    animation-play-state: paused;
+  }
+</style>
+
+<div class="card bg-base-100 w-96 shadow-sm">
+  <figure>
+    <div class="hero rounded-box">
+      <div class="hero-content text-center">
+        <div class="max-w-md">
+          <div class="avatar py-8">
+            <div class="rounded-full w-48">
+              <img src="/bardavatar.png" />
+            </div>
+          </div>
+          <h1 class="text-5xl font-bold">Bard Dev</h1>
+          <p class="py-6">
+            Hello! Welcome on my navigation page. I'm a developer specializing
+            in web technologies and end to end solutions. Feel free to explore
+            my projects and get in touch!
+          </p>
+        </div>
+      </div>
+    </div>
+  </figure>
+  <div class="card-body">
+    <ul class="list bg-base-100 rounded-box shadow-md">
+      {
+        cards.map((e) => (
+          <li class="list-row flex items-center ">
+            <div>
+              <img class="size-10 rounded-box" src={e.imageSrc} />
+            </div>
+            <div>
+              <div>{e.title}</div>
+              <div class="text-xs uppercase font-semibold opacity-60">
+                {e.description}
+              </div>
+            </div>
+            <a
+              href={e.linkHref}
+              class="btn btn-ghost btn-sm ml-auto p-auto"
+              target="_blank"
+            >
+              <Icon name="external" class="size-6" />
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+    <div class="bg-base-300 rounded-box mt-2 p-2">
+      <h2 class="font-bold mt-4 text-2xl text-center">Tech Stack</h2>
+      <div class="overflow-hidden rounded-box max-w-md p-4">
+        <div class="tech-carousel flex space-x-4 w-max">
+          {
+            [...techStack, ...techStack].map((tech) => (
+              <div class="carousel-item p-1 rounded-2xl shrink-0 flex flex-col items-center">
+                <img src={tech.imageSrc} class="w-12" alt={tech.name} />
+                <div class="text-xs font-semibold">{tech.name}</div>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
