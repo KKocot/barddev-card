@@ -1,0 +1,72 @@
+---
+import { Icon } from "@astrojs/starlight/components";
+
+interface Card {
+  title: string;
+  description: string;
+  imageSrc: string;
+  linkHref: string;
+}
+const cards: Card[] = [
+  {
+    title: "Portfolio",
+    description: "Commercial contact",
+    imageSrc: "/portfolio.png",
+    linkHref: "https://portfolio.bard-dev.com",
+  },
+  {
+    title: "Blog Page",
+    description: "My personal blog",
+    imageSrc: "/blog.png",
+    linkHref: "https://blog.dev.openhive.network/@barddev",
+  },
+  {
+    title: "Conqsite",
+    description: "My main project",
+    imageSrc: "/card-logo.webp",
+    linkHref: "https://conqsite.bard-dev.com",
+  },
+  {
+    title: "Flashcards",
+    description: "Learning tool",
+    imageSrc: "/flashcards.svg",
+    linkHref: "https://github.com/KKocot/flashcards",
+  },
+  {
+    title: "Hive Renderer",
+    description: "Alternative renderer for Hive Blog",
+    imageSrc: "/hive-blockchain-hive-logo.png",
+    linkHref: "https://hive-renderer.bard-dev.com",
+  },
+  {
+    title: "GitHub",
+    description: "My open source projects",
+    imageSrc: "/GitHub.svg",
+    linkHref: "https://github.com/KKocot",
+  },
+];
+---
+
+<div class="card-body">
+  <ul class="list bg-base-100 rounded-box shadow-md">
+    {
+      cards.map((e) => (
+        <a href={e.linkHref} target="_blank">
+          <li class="list-row flex items-center hover:bg-base-200">
+            <div class="rounded-box bg-base-300 relative overflow-hidden">
+              <img class="size-10 p-1" src={e.imageSrc} />
+              <div class="absolute inset-0 bg-base-100 opacity-30 pointer-events-none rounded-box" />
+            </div>
+            <div>
+              <div>{e.title}</div>
+              <div class="text-xs font-semibold opacity-60">
+                {e.description}
+              </div>
+            </div>
+            <Icon name="external" class="size-10 ml-auto" />
+          </li>
+        </a>
+      ))
+    }
+  </ul>
+</div>

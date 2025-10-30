@@ -1,192 +1,74 @@
-# Main Card# Astro Starter Kit: Basics
+# Bard Dev Card
 
+A modern, visually appealing developer card and navigation page built with [Astro](https://astro.build/), [Tailwind CSS](https://tailwindcss.com/), and [DaisyUI](https://daisyui.com/). This project serves as a personal landing page, showcasing your profile, featured projects, and technology stack.
 
+![Screenshot](public/teck-icons/Astro.svg)
 
-A modern personal portfolio card built with Astro, showcasing projects and technical skills in a clean, responsive design.```sh
+## ✨ Features
 
-npm create astro@latest -- --template basics
+- **Hero Section:** Brief introduction and avatar.
+- **Projects Showcase:** Quick links to portfolio, blog, and main projects.
+- **Tech Stack Carousel:** Display of core and additional technologies used.
+- **Responsive Design:** Looks great on all devices.
+- **Built with Astro:** Fast, modern static site generator.
 
-## ✨ Features```
+## 🚀 Demo
 
+[Live Demo](https://card.bard-dev.com) <!-- Update with your live link if available -->
 
-
-- **Portfolio Showcase**: Display your key projects with descriptions and links> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
-
-- **Tech Stack Display**: Visual representation of your technical skills with icons
-
-- **Responsive Design**: Built with Tailwind CSS and DaisyUI for modern styling## 🚀 Project Structure
-
-- **Fast Performance**: Powered by Astro for optimal loading speeds
-
-- **Type Safety**: Written in TypeScript for better development experienceInside of your Astro project, you'll see the following folders and files:
-
-
-
-## 🚀 Project Structure```text
-
-/
-
-```text├── public/
-
-/│   └── favicon.svg
-
-├── public/├── src
-
-│   └── teck-icons/          # Technology stack icons│   ├── assets
-
-├── src/│   │   └── astro.svg
-
-│   ├── components/│   ├── components
-
-│   │   └── Card.astro       # Main card component│   │   └── Welcome.astro
-
-│   ├── layouts/│   ├── layouts
-
-│   │   └── Layout.astro     # Base layout template│   │   └── Layout.astro
-
-│   └── pages/│   └── pages
-
-│       └── index.astro      # Homepage│       └── index.astro
-
-├── astro.config.mjs└── package.json
-
-├── package.json```
-
-├── tsconfig.json
-
-└── global.cssTo learn more about the folder structure of an Astro project, refer to [our guide on project structure](https://docs.astro.build/en/basics/project-structure/).
+## 📂 Project Structure
 
 ```
-
-## 🧞 Commands
+main-card/
+├── public/
+│   └── teck-icons/           # Technology icons
+├── src/
+│   ├── components/           # Card, Hero, Projects, TechStack
+│   ├── layouts/              # Layout wrapper
+│   └── pages/                # index.astro (main entry)
+├── global.css                # Global styles
+├── astro.config.mjs          # Astro configuration
+├── package.json              # Project metadata & scripts
+└── README.md                 # Project documentation
+```
 
 ## 🛠️ Tech Stack
 
-All commands are run from the root of the project, from a terminal:
+- **Astro**
+- **Tailwind CSS**
+- **DaisyUI**
+- **TypeScript**
+- **Vite**
+- **Starlight** (for docs integration)
 
-- **Framework**: [Astro](https://astro.build)
+## 📦 Getting Started
 
-- **Styling**: [Tailwind CSS](https://tailwindcss.com) + [DaisyUI](https://daisyui.com)| Command                   | Action                                           |
+1. **Install dependencies:**
+   ```sh
+   npm install
+   ```
+2. **Run the development server:**
+   ```sh
+   npm run dev
+   ```
+3. **Build for production:**
+   ```sh
+   npm run build
+   ```
+4. **Preview production build:**
+   ```sh
+   npm run preview
+   ```
 
-- **Language**: TypeScript| :------------------------ | :----------------------------------------------- |
+## 🧑‍💻 Author
 
-- **Icons**: Custom SVG tech stack icons| `npm install`             | Installs dependencies                            |
-
-- **Deployment**: Ready for static hosting| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-
-| `npm run build`           | Build your production site to `./dist/`          |
-
-## 🚀 Getting Started| `npm run preview`         | Preview your build locally, before deploying     |
-
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-
-### Prerequisites| `npm run astro -- --help` | Get help using the Astro CLI                     |
-
-
-
-- Node.js (v18 or higher)## 👀 Want to learn more?
-
-- npm or yarn
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
-
-### Installation
-
-1. Clone the repository:
-```bash
-git clone <your-repo-url>
-cd main-card
-```
-
-2. Install dependencies:
-```bash
-npm install
-```
-
-3. Start the development server:
-```bash
-npm run dev
-```
-
-4. Open your browser and visit `http://localhost:4321`
-
-## 🧞 Available Scripts
-
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`     |
-| `npm run build`           | Build your production site to `./dist/`         |
-| `npm run preview`         | Preview your build locally, before deploying    |
-| `npm run format`          | Format code with Prettier                       |
-| `npm run format:check`    | Check code formatting                           |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check`|
-
-## 🎨 Customization
-
-### Adding Projects
-
-Edit the `cards` array in `src/components/Card.astro`:
-
-```typescript
-const cards: Card[] = [
-  {
-    title: "Your Project",
-    description: "Project description",
-    imageSrc: "/your-image.png",
-    linkHref: "https://your-project-link.com",
-  },
-  // Add more projects...
-];
-```
-
-### Adding Tech Stack Icons
-
-1. Add your SVG icons to the `public/teck-icons/` directory
-2. Update the `techStack` array in `src/components/Card.astro`:
-
-```typescript
-const techStack = [
-  { name: "Technology Name", imageSrc: "/teck-icons/YourIcon.svg" },
-  // Add more technologies...
-];
-```
-
-## 📦 Deployment
-
-This project generates static files and can be deployed to any static hosting service:
-
-- **Netlify**: Connect your GitHub repo for automatic deployments
-- **Vercel**: Import project and deploy with zero configuration
-- **GitHub Pages**: Use GitHub Actions for automated deployment
-- **Cloudflare Pages**: Connect repository for edge deployment
-
-Build the project for production:
-
-```bash
-npm run build
-```
-
-The built files will be in the `dist/` directory.
-
-## 🤝 Contributing
-
-1. Fork the repository
-2. Create your feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m 'Add some amazing feature'`)
-4. Push to the branch (`git push origin feature/amazing-feature`)
-5. Open a Pull Request
+**Bard Dev**  
+[Portfolio](https://portfolio.bard-dev.com) | [Blog](https://blog.dev.openhive.network/@barddev)
 
 ## 📄 License
 
 This project is open source and available under the [MIT License](LICENSE).
 
-## 🔗 Links
-
-- [Astro Documentation](https://docs.astro.build)
-- [Tailwind CSS Documentation](https://tailwindcss.com/docs)
-- [DaisyUI Components](https://daisyui.com/components/)
-
 ---
 
-Built with ❤️ using [Astro](https://astro.build)
+> Made with ❤️ using Astro, Tailwind CSS, and DaisyUI.
